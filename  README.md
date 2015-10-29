@@ -2,7 +2,18 @@
 
 This is a basic Webpack project template for a web app written in ES6 & LESS.
 
-The workflow is simple:
+This assumes you have a directory structure as follows:
+
+```
+package.json
+webpack.config.js
+src/
+  index.js
+  static/
+    index.html
+```
+
+---
 
 ## Installation
 
