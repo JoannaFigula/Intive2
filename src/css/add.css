@@ -1,0 +1,93 @@
+@import url(reset.css);
+html {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 62.5%;
+    /*background-color: var(--dark-gray);*/
+    /*display: flex;*/
+    /*align-items: center;*/
+}
+
+body {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color:white;
+}
+
+#formContainer{
+    width: 70%;
+    /*height: 30rem;*/
+    border: 1px solid blue;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    margin: 15rem;
+    padding: 5rem;
+    position: relative;
+    flex-shrink: 0;
+    background-color: var(--dark-gray);
+}
+
+h2{
+    font-size: 4.8rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: var(--pink);
+}
+
+.form {
+    /*border: 1px solid black;*/
+    width: 100%;
+    /*max-width: 50rem;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+
+.wave {
+    /*border: 3px solid yellow;*/
+    align-self: flex-end;
+    margin-top:auto;
+}
+
+label {
+    font-size: 2rem;
+    margin: 2rem 0 0.3rem;
+    font-weight: bold;
+}
+input, textarea {
+    width: 40rem;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    border: none;
+}
+
+textarea {
+    min-height: 15rem;
+}
+
+.factorGroup {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 1.2rem;
+    margin-top: 2rem;
+}
+
+.factorGroup .factor {
+    min-width: 10rem;
+    border: none;
+    border-radius: 0.5rem;
+    color: white;
+    margin: 0.3rem;
+    padding: 0.7rem 1rem;
+    align-items: end;
+    cursor: pointer;
+    background-color: var(--blue);
+}
+
+
