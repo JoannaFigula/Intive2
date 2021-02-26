@@ -9,14 +9,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" type="text/css" href="media.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/media.css">
+    <link rel="stylesheet" type="text/css" href="css/add.css">
     <title>Patronage 2021</title>
 </head>
 <body>
 <div class="container">
     <header class="movieLogo">
         <img alt="" src="assets/logo.png">
+        <button class="btnAdd"><i class="fas fa-film"></i>Add a new movie</button>
     </header>
     <div id="moviesCountersContainer">
         <div class="movieCountersParagraphs">
@@ -40,9 +42,40 @@
         </ul>
     </div>
 </div>
+
+<div class="popup">
+    <div id="formContainer">
+        <div>
+            <h2>Add a new movie</h2>
+            <form autoComplete="off" class="form" onsubmit="" >
+                <p class="alertInfo"></p>
+                <label>Title</label>
+                <input type="text" id="title" name="title" placeholder="Enter title"/>
+                <p class="titleParagraph"></p>
+                <label>Year</label>
+                <input type="text" class="year"  name="numbers" placeholder="Enter year" />
+                <p class="yearParagraph"></p>
+                <label>Genre</label>
+                <input name="genre" placeholder="Enter genre"/>
+                <p class="genreParagraph"></p>
+                <label>Description</label>
+                <textarea tag="textarea" name="description" placeholder="Enter whatever you want..."></textarea>
+                <div class="factorGroup">
+                    <button type="submit" class="factor submit-btn">Add</button>
+                    <button class="factor btnCancel">Cancel</button>
+                </div>
+            </form>
+        </div>
+        <img class="popupImg"  src="assets/undraw_pink.svg"/>
+    </div>
+    <div>
+        <img class="wave" src="assets/wavePink.svg"/>
+    </div>
+</div>
+
 <div id="content"></div>
 
-<script src="../build/bundle.js"></script>
+<script src="build/out.js"></script>
 </body>
 
 </html>

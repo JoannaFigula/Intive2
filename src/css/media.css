@@ -9,7 +9,6 @@
         padding: 1.5rem;
     }
 
-
     .movieCountersParagraphs {
         display: flex;
         position: fixed;
@@ -20,6 +19,14 @@
     .movieCountersParagraphs p:first-child{ padding: 1.5rem 1rem 1.5rem 5rem; }
 
     .movieCountersParagraphs p:last-child{ padding: 1.5rem 5rem 1.5rem 0;}
+
+
+}
+
+@media all and (max-width: 1024px) {
+    #formContainer{
+        flex-direction: column;
+    }
 }
 
 @media all and (max-width: 770px) {
@@ -33,6 +40,28 @@
     li:nth-last-child(1){
         margin-right: unset;
     }
+
+    #formContainer div h2 {
+        font-size: 3.8rem;
+    }
+
+    .popupImg{
+        display: none;
+    }
+
+    form label {
+        font-size: 1.8rem;
+    }
+
+    form input, form textarea {
+        width: 35rem;
+        padding: 1rem;
+    }
+
+    textarea {
+        min-height: 10rem;
+    }
+
 }
 
 @media all and (max-width: 425px) {
@@ -51,6 +80,15 @@
         font-size: 1.5rem;
         padding: 1.7rem 1rem;
         color: var(--very-dark-gray);
+    }
+    .popup {
+        margin-top: 0;
+        width: 100%;
+    }
+
+    form input, form textarea {
+        width: 25rem;
+        padding: 1rem;
     }
 
     .movieLogo img {
