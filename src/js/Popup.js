@@ -2,6 +2,7 @@ export default class Popup {
     constructor(element, openBtnSelector, callback) {
         this.root = document.querySelector(element);
         this.openBtnSelector = openBtnSelector;
+        this.closeBtn = this.root.querySelector('.btnCancel');
         this.init()
     }
 
@@ -14,7 +15,12 @@ export default class Popup {
     }
 
     init() {
-        this.root.querySelector('.btnCancel').addEventListener('click', this.close)
-        document.querySelector(this.openBtnSelector).addEventListener('click', this.open)
+        this.root.addEventListener('click', (e) => {
+            if (e.target.classList.contains('btnCancel')) {
+                this.close()
+            }
+        });
+        document.querySelector(this.openBtnSelector).addEventListener('click', this.open);
+
     }
 }

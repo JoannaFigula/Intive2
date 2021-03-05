@@ -67,6 +67,11 @@ form p {
     font-weight: bold;
 }
 
+.newDiv{
+    display: flex;
+    flex-direction: column;
+}
+
 .wave {
     position: absolute;
     z-index: 1;
@@ -103,7 +108,7 @@ textarea {
     font-size: 1.2rem;
     margin-top: 2rem;}
 
-#formContainer .factorGroup .factor {
+.btnCancel, .btnSubmit {
     min-width: 10rem;
     border: none;
     border-radius: 0.5rem;
@@ -114,8 +119,15 @@ textarea {
     cursor: pointer;
     font-weight: bold;
     font-size: 1.5rem;
-    color: var(--very-dark-gray);
-    background-color: var(--blue);
+    color: white;
+
 }
 
 
+.btnCancel {
+    background-color: var(--blue);
+}
+
+.btnSubmit {
+    background-color: var(--green);
+}

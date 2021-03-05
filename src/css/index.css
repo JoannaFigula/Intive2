@@ -191,10 +191,11 @@ body {
 
 #moviesList img {
     width: 100%;
-    min-height: 20rem;
+    height: 25rem;
     padding: 5px;
 }
 .movieItem h2 {
+    padding: 0.5rem;
     font-size: 1.6rem;
     font-weight: bold;
 }

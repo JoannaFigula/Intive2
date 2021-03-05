@@ -1,30 +1,43 @@
 export default class FormControl {
-    constructor( name, labelInfo,classNameP, validateMethod, parent, errorMessage) {
-        this.name = name;
-        this.labelInfo = labelInfo;
-        this.classNameP = classNameP;
+    constructor( type, id, labelText, validateMethod, parent, errorMessage) {
+        this.id = id;
+        this.type = type;
+        this.labelText = labelText;
         this.validateMethod = validateMethod;
-        this.parent = document.querySelector(parent);
         this.hasError = false;
         this.errorMessage = errorMessage;
     }
 
     validate = (e) => {
         const { value } = e.target;
-        this.hasError = this.validateMethod(value);
+        this.hasError = !this.validateMethod(value);
+        const el = this.parent.querySelector(`#${this.id} + p`);
+        if (this.hasError) {
+            el.innerText = this.errorMessage
+        } else {
+            el.innerText = ''
+        }
     }
 
     get isValid() {
-        return this.hasError
+        return !this.hasError
     }
 
-    init() {
-        const div = document.createElement('div');
-        div.innerHTML = `
-            <label>${this.labelInfo}</label>
-            <input name="${this.name}" />
-            <p class="${this.classNameP}">${this.errorMessage}</p>
+    init(parent) {
+        this.div = document.createElement('div');
+        this.div.classList.add("newDiv");
+        this.div.innerHTML = `
+            <label>${this.labelText}</label>
+            <input type="${this.type}" name="${this.id}" id="${this.id}" placeholder="Enter ${this.labelText.toLowerCase()}"/>
+            <p></p>
         `
-        return div;
+        parent.appendChild(this.div)
+
+        this.parent = parent;
+
+        console.log(parent.querySelector(`#${this.id}`))
+
+        parent.querySelector(`#${this.id}`).addEventListener('change', this.validate)
+
     }
 }

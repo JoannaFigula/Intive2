@@ -11,7 +11,13 @@ export default class MoviesStorage {
 
     set items(items) {
         this.movies = items;
+        console.log(this.movies)
         localStorage.setItem('movies', JSON.stringify(items))
+    }
+
+    add(item) {
+        this.movies = [...this.items, item];
+        localStorage.setItem('movies', JSON.stringify(this.movies))
     }
 
     serializeData(data) {
@@ -29,7 +35,6 @@ export default class MoviesStorage {
 
     delete(id) {
         const movies = this.items.filter(el => el.id.toString() !== id.toString());
-        console.log(movies)
         this.items = movies
     }
 

@@ -3,6 +3,7 @@ export default class Movie {
         this.movie = movie;
         this.parent = parent;
         this.render();
+
     }
     render() {
         const isSeen = this.movie.seen;
@@ -24,8 +25,7 @@ export default class Movie {
                     <div class="factorParagraphs">
                         <p class="factor factorParagraph">${this.movie.year}</p>
                         <p class="factor factorParagraph">${this.movie.genre}</p>
-                    </div>
-                    
+                    </div>                    
                     <h2> ${this.movie.title} </h2> <p class="summary">${this.movie.summary}</p>
                </div>
                 <div class="factorGroup">        
