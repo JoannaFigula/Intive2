@@ -12,12 +12,12 @@ export default class MoviesStorage {
     set items(items) {
         this.movies = items;
         console.log(this.movies)
-        localStorage.setItem('movies', JSON.stringify(items))
+        localStorage.setItem('movies', JSON.stringify(items));
     }
 
     add(item) {
         this.movies = [...this.items, item];
-        localStorage.setItem('movies', JSON.stringify(this.movies))
+        localStorage.setItem('movies', JSON.stringify(this.movies));
     }
 
     serializeData(data) {
@@ -41,7 +41,7 @@ export default class MoviesStorage {
     check() {
         let movies;
         try {
-            movies = JSON.parse(localStorage.getItem('movies'))
+            movies = JSON.parse(localStorage.getItem('movies'));
         } catch (e) {
             console.warn(e);
         }
@@ -54,7 +54,5 @@ export default class MoviesStorage {
 
         this.items = this.serializeData(this.basicMovies);
     }
-
-
 
 }

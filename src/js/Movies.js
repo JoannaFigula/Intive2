@@ -85,29 +85,25 @@ export default class Movies {
             url: "https://source.unsplash.com/random",
             summary: movie.description,
             seen: false,
-            id: new Date().getUTCDate()
+            id: Math.floor(21 + Math.random() * 100)
         });
         this.popup.close()
-        this.render()
+        this.render();
+        this.updateCounterAll();
+        this.updateCounterSeen();
     }
 
     init() {
         this.moviesListEl = this.root.querySelector('#moviesList');
         this.counterAllEl = document.querySelector("#moviesCounterAll");
         this.counterSeenEl = document.querySelector('#moviesCounterSeen');
-        this.movieInput = document.querySelector('input');
-        this.btnSubmit = document.querySelector('#btnSubmit');
         this.form = document.querySelector('form');
-        this.idNumber = 21;
         const title = new FormControl('text', 'title', 'Title', value => value.length > 2, 'form', 'Tytul niepoprawny');
         const year = new FormControl('number', 'year', 'Year', value => value.length === 4 , 'form', 'Rok niepoprawny');
         const genre = new FormControl('text', 'genre', 'Genre', value => value.length > 0 , 'form', 'Wpisz gatunek');
         const description = new FormControl('textarea','description', 'Description', () => true, 'form');
-
-
         const form = new Form('.formContainerGroup', 'form', [ title, year, genre, description], this.addMovie);
         form.init();
-
     }
 
     deleteMovie(e) {
@@ -116,5 +112,6 @@ export default class Movies {
         this.movies.delete(elId);
         this.render();
         this.updateCounterAll();
+        this.updateCounterSeen();
     }
 }
